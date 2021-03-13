@@ -1,6 +1,13 @@
 body {
-    background-color: purple;
     background-image: url("img/background-test.jpg");
     background-repeat: no-repeat;
-    color: white;
+    color: rgb(117, 30, 30);
+}
+h1 {
+    margin-bottom: 0px;
+}
+
+h4 {
+    font-weight: 500;
+    margin-top: 0px;
 }

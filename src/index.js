@@ -4,17 +4,17 @@ import api from "./api";
 import dom from "./dom";
 
 let config = {
-    degree: "celsius",
+    degreesUnit: "celsius",
 };
 
 const newTitle = document.createElement('h1');
 const domBody = document.querySelector('body');
-
 const tempButtons = document.querySelectorAll(".tempButtons");
+
 tempButtons.forEach(button => {
     button.addEventListener("click", (event) => {
         const id = event.target.getAttribute("data-id");
-        config.degree = id;
+        config.degreesUnit = id;
         dom.toggleTemp(id);
     })
 })

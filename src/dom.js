@@ -3,18 +3,18 @@ const dom = (function dom() {
         if(!weatherObj) {
             return "";
         }
-        const parsedData = {};
-        parsedData.cityName = weatherObj.name;
-        parsedData.temperature = weatherObj.main.temp;
-        parsedData.temperatureCelsius = `${Math.round(parsedData.temperature - 273.13)} °C`;
-        parsedData.temperatureFahrenheit = `${Math.round((((parsedData.temperature - 273) * 9) / 5) + 32)} °F`;
-        parsedData.main = weatherObj.weather[0].main;
-        parsedData.description = weatherObj.weather[0].description;
+        const displayData = {};
+        displayData.cityName = weatherObj.name;
+        displayData.temperature = weatherObj.main.temp;
+        displayData.temperatureCelsius = `${Math.round(displayData.temperature - 273.13)} °C`;
+        displayData.temperatureFahrenheit = `${Math.round((((displayData.temperature - 273) * 9) / 5) + 32)} °F`;
+        displayData.main = weatherObj.weather[0].main;
+        displayData.description = weatherObj.weather[0].description;
 
-        const nodeList = Object.keys(parsedData).map((property) => {
+        const nodeList = Object.keys(displayData).map((property) => {
             const newNode = document.createElement("div");
             newNode.classList.add("data");
-            newNode.textContent = parsedData[property];
+            newNode.textContent = displayData[property];
             newNode.id = property;
             return newNode;
         });
@@ -24,7 +24,7 @@ const dom = (function dom() {
 
         nodeList.push(weatherIcon);
 
-        getGifImg(parsedData.description)
+        getGifImg(displayData.description)
             .then(img => container.appendChild(img));
 
 

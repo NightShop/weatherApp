@@ -16,6 +16,7 @@ const api = (function api() {
             })
             .then((resolve) => resolve.json())
             .catch((err) => {
+                alert("You misspelled name of the city or it is not in our databse");
                 console.log(err);
             });
     }

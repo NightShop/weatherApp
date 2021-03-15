@@ -1,7 +1,7 @@
 import './style.css';
 import './img/background-test.jpg';
 import api from "./api";
-import dom from "./domManipulation";
+import dom from "./dom";
 
 let config = {
     degree: "celsius",
